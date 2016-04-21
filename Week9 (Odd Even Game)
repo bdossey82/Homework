@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+public class OddEvenGame
+{
+public static void main (String[]args)
+{
+
+Scanner input = new Scanner (System.in);
+
+
+int win = 0;
+int tryAgain = 0;
+
+
+Player player = new Player ("Blake", 0, 0);
+player.getPlayerLevel();
+System.out.println(player.getPlayerLevel());
+
+do
+{
+int result = 1 + (int)(Math.random()* 6);
+System.out.print("Enter '1' for Odd,\nEnter '2' for Even:");
+int playerInput = input.nextInt();
+System.out.println("Number is: " + result);
+
+
+if (playerInput %2 == 0)
+
+if (result %2 == 0)
+
+System.out.println("You win"); win++;
+player.setWin(win);
+
+
+else
+System.out.println("You lose");
+
+if (playerInput %2 != 0)
+
+if (result %2 != 0)
+
+System.out.println("You win"); win++;
+player.setWin(win);
+
+
+else
+System.out.println("You lose");
+
+
+player.playerLevel();
+System.out.print("Enter '1' to play again\nEnter '2' to quit: ");
+tryAgain = input.nextInt();
+}
+
+while (tryAgain == 1);
+System.out.println(player.getPlayerLevel());
+}
+}
